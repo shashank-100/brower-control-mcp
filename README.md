@@ -21,12 +21,66 @@ This project consists of two parts:
 
 The server communicates with the Chrome extension through a local WebSocket connection (default port: 9003), ensuring all automation happens on your local machine with no data sent to external servers.
 
-## Installation
+## Quick Start
+
+### 1. Install Dependencies and Build
 
 ```bash
 npm install
 npm run build
 ```
+
+### 2. Install Chrome Extension
+
+1. Open Chrome and navigate to `chrome://extensions/`
+2. Enable "Developer mode" (toggle in top-right)
+3. Click "Load unpacked"
+4. Select the `extension` directory from this repository
+5. Pin the extension to your toolbar (optional but recommended)
+
+### 3. Start the MCP Server
+
+```bash
+npm run dev
+```
+
+The server will start and wait for the browser extension to connect.
+
+### 4. Connect the Extension
+
+1. Click the Browser MCP extension icon in Chrome
+2. The extension should automatically connect to the server
+3. You should see "Connected" status with a green badge
+
+### 5. Configure Claude Desktop
+
+Add this to your Claude Desktop configuration file:
+
+**macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
+**Windows**: `%APPDATA%/Claude/claude_desktop_config.json`
+**Linux**: `~/.config/Claude/claude_desktop_config.json`
+
+```json
+{
+  "mcpServers": {
+    "browser": {
+      "command": "node",
+      "args": ["/absolute/path/to/brower-control-mcp/dist/index.js"]
+    }
+  }
+}
+```
+
+Replace `/absolute/path/to/brower-control-mcp/dist/index.js` with your actual path.
+
+### 6. Restart Claude Desktop
+
+Restart Claude Desktop to load the MCP server. You can now ask Claude to automate your browser!
+
+## Detailed Documentation
+
+- [Usage Guide](USAGE.md) - Complete setup and configuration instructions
+- [Extension Guide](extension/README.md) - Chrome extension documentation
 
 ## Usage
 
@@ -60,14 +114,16 @@ Add this to your Claude Desktop configuration file:
 }
 ```
 
-### Chrome Extension Setup
+### Chrome Extension
 
-You'll need a compatible Chrome extension that:
-- Connects to WebSocket on port 9003
-- Responds to browser automation commands
-- Captures ARIA snapshots for page state
+The included Chrome extension connects your browser to the MCP server:
 
-The extension handles the actual browser automation while the MCP server provides the AI interface.
+- **Location**: `extension/` directory in this repository
+- **Installation**: Load as unpacked extension in Chrome (see Quick Start)
+- **Connection**: Automatically connects to `ws://localhost:9003`
+- **Status**: Check connection status by clicking the extension icon
+
+See [extension/README.md](extension/README.md) for detailed documentation.
 
 ## Available Tools
 

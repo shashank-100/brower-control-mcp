@@ -1,0 +1,26 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="64" cy="64" r="60" fill="#3b82f6"/>
+
+  <!-- Browser window -->
+  <rect x="28" y="38" width="72" height="52" rx="4" fill="white"/>
+
+  <!-- Browser toolbar -->
+  <rect x="28" y="38" width="72" height="12" rx="4" fill="#e5e7eb"/>
+  <circle cx="36" cy="44" r="2" fill="#ef4444"/>
+  <circle cx="44" cy="44" r="2" fill="#f59e0b"/>
+  <circle cx="52" cy="44" r="2" fill="#10b981"/>
+
+  <!-- AI/Automation symbol (lightning bolt) -->
+  <path d="M 68 54 L 62 66 L 68 66 L 64 78 L 74 62 L 68 62 L 72 54 Z" fill="#3b82f6"/>
+
+  <!-- Connection dots -->
+  <circle cx="42" cy="62" r="3" fill="#3b82f6" opacity="0.6"/>
+  <circle cx="48" cy="72" r="3" fill="#3b82f6" opacity="0.6"/>
+  <circle cx="42" cy="82" r="3" fill="#3b82f6" opacity="0.6"/>
+
+  <!-- Connection lines -->
+  <line x1="45" y1="62" x2="62" y2="66" stroke="#3b82f6" stroke-width="2" opacity="0.4"/>
+  <line x1="51" y1="72" x2="62" y2="72" stroke="#3b82f6" stroke-width="2" opacity="0.4"/>
+  <line x1="45" y1="82" x2="64" y2="78" stroke="#3b82f6" stroke-width="2" opacity="0.4"/>
+</svg>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Browser MCP</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Browser MCP</h1>
+      <p class="subtitle">AI Browser Automation</p>
+    </div>
+
+    <div class="status-section">
+      <div class="status-item">
+        <div class="status-label">MCP Server</div>
+        <div class="status-indicator">
+          <span id="connection-status" class="status-badge disconnected">Disconnected</span>
+        </div>
+      </div>
+
+      <div class="status-item" id="error-section" style="display: none;">
+        <div class="error-message" id="error-message"></div>
+      </div>
+    </div>
+
+    <div class="info-section">
+      <div class="info-item">
+        <div class="info-label">Server URL</div>
+        <div class="info-value">ws://localhost:9003</div>
+      </div>
+
+      <div class="info-item" id="reconnect-info" style="display: none;">
+        <div class="info-label">Reconnect Attempts</div>
+        <div class="info-value" id="reconnect-count">0</div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button id="connect-btn" class="btn btn-primary">Connect</button>
+      <button id="refresh-btn" class="btn btn-secondary">Refresh</button>
+    </div>
+
+    <div class="footer">
+      <div class="features">
+        <div class="feature-item">⚡ Fast</div>
+        <div class="feature-item">🔒 Private</div>
+        <div class="feature-item">👤 Logged In</div>
+        <div class="feature-item">🥷🏼 Stealth</div>
+      </div>
+      <div class="version">v0.1.0</div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
